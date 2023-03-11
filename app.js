@@ -29,5 +29,15 @@ function calculateSpeed() {
   let speedInKbps = (speedInBps / 1024).toFixed(2);
   let speedInMbps = (speedInKbps / 1024).toFixed(2);
 
-  
+  bitOutput.innerHTML += `${speedInBps}`;
+  kbsOutput.innerHTML += `${speedInKbps}`;
+  mbsOutput.innerHTML += `${speedInMbps}`;
 }
+
+// initial
+const init = async () => {
+  startTime = new Date().getTime();
+  image.src = imageLink;
+};
+
+window.onload = () => init();
